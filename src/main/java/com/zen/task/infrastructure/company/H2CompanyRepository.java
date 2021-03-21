@@ -1,11 +1,12 @@
-package com.zen.task.infrastructure;
+package com.zen.task.infrastructure.company;
 
 import com.zen.task.domain.company.Company;
-import com.zen.task.domain.company.NoSuchCompanyFoundException;
 import com.zen.task.domain.company.CompanyRepository;
+import com.zen.task.domain.company.NoSuchCompanyFoundException;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.UUID;
-import org.springframework.stereotype.Repository;
 
 @Repository
 public class H2CompanyRepository implements CompanyRepository {
@@ -17,15 +18,14 @@ public class H2CompanyRepository implements CompanyRepository {
     }
 
     public Company findById(UUID id) {
-        return repository.findById(id).orElseThrow(() -> new NoSuchCompanyFoundException("Not Found"));
+        return repository.findById(id).orElseThrow(() -> new NoSuchCompanyFoundException("Not found"));
     }
 
-    public Company save(Company company) {
-        return repository.save(company);
-    }
+    public Company save(Company company) { return repository.save(company); }
 
     @Override
     public List<Company> findAll() {
         return repository.findAll();
     }
+
 }

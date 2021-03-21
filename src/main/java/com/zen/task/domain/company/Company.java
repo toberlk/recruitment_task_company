@@ -1,22 +1,28 @@
 package com.zen.task.domain.company;
 
-import java.util.UUID;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.hibernate.annotations.Type;
+import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table
 public class Company {
 
     @Id
-    @Column(columnDefinition = "uniqueidentifier")
+    @Column(columnDefinition = "uniqueidentifier", unique = true)
     @Type(type = "uuid-char")
     private UUID id;
-    @Column
+
+    @Column(nullable = false, unique = true)
     private String name;
+
+    @Column(columnDefinition = "DATE")
+    private LocalDate operationCloseDate;
 
     public Company(final UUID id, final String name) {
         this.id = id;
@@ -33,6 +39,18 @@ public class Company {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getOperationCloseDate() {
+        return operationCloseDate;
+    }
+
+    public void setOperationCloseDate(LocalDate operationCloseDate) {
+        this.operationCloseDate = operationCloseDate;
     }
 
 }

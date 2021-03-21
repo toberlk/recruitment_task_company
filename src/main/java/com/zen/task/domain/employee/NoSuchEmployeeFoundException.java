@@ -1,12 +1,12 @@
-package com.zen.task.domain.company;
+package com.zen.task.domain.employee;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class NoSuchCompanyFoundException extends RuntimeException {
+public class NoSuchEmployeeFoundException extends RuntimeException {
 
-        public NoSuchCompanyFoundException(final String message) {
+        public NoSuchEmployeeFoundException(final String message) {
         super(message);
     }
 }

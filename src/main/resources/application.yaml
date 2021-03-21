@@ -1,5 +1,8 @@
 server:
   port : 8081
+  error:
+    include-exception: true
+    include-message: always
 spring:
   h2:
     console:

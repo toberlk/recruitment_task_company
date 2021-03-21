@@ -1,15 +1,15 @@
-package com.zen.task;
+package com.zen.task.domain.company;
+
+import com.zen.task.infrastructure.company.H2CompanyRepository;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
-import com.zen.task.domain.company.Company;
-import com.zen.task.infrastructure.H2CompanyRepository;
-import java.util.UUID;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class CompanyTest {
